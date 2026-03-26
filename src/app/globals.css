@@ -25,15 +25,50 @@ html {
 }
 
 body {
-  font-family: 'Outfit', 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
+  font-family: 'Outfit', 'Inter', sans-serif; /* Kept original font-family */
   line-height: 1.6;
+  position: relative; /* Added for pseudo-elements positioning */
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
   background-attachment: fixed;
+}
+
+/* Premium Dynamic Background Orbs */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: floatBackground 25s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body::before {
+  background: var(--accent-purple);
+  top: -10%;
+  left: -10%;
+}
+
+body::after {
+  background: var(--accent-cyan);
+  bottom: -10%;
+  right: -10%;
+  animation-duration: 30s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes floatBackground {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15vw, 10vh) scale(1.1); }
+  100% { transform: translate(-10vw, 20vh) scale(0.9); }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -5,19 +5,16 @@ export default function CertificatesSection() {
     {
       title: 'Mastering Data Structures and Algorithms',
       issuer: 'Board Infinity',
-      date: 'Aug 2024',
       link: 'https://drive.google.com/file/d/1yUdT4Is0YDaFQka7LbyWyExqvUKLHSTf/view?usp=drive_link'
     },
     {
       title: 'Computer Networking',
       issuer: 'Google-Coursera',
-      date: 'Sep 2024',
       link: 'https://drive.google.com/file/d/1afj6Jp_okQMK7OFFWTNMm2XC5mNaw8Rj/view?usp=drive_link'
     },
     {
       title: 'Hardware and Operating Systems',
       issuer: 'IBM-Coursera',
-      date: 'Sep 2024',
       link: 'https://drive.google.com/file/d/15f6r2mgYnNbntgaMY7IquJcnRJL2L2C8/view?usp=drive_link'
     }
   ];
@@ -38,7 +35,6 @@ export default function CertificatesSection() {
               <div className={styles.certBody}>
                 <h3 className={styles.certTitle}>{cert.title}</h3>
                 <p className={styles.certIssuer}>{cert.issuer}</p>
-                <div className={styles.certDate}>{cert.date}</div>
               </div>
               
               <a 
