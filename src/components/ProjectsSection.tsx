@@ -25,6 +25,52 @@ export default function ProjectsSection() {
     }
   ];
 
+  const renderProjectAnimation = (idx: number) => {
+    switch(idx) {
+      case 0:
+        return (
+          <div className={styles.animContainer}>
+             <div className={styles.trieNetwork}>
+               <div className={`${styles.node} ${styles.n1}`}></div>
+               <div className={`${styles.path} ${styles.p1}`}></div>
+               <div className={`${styles.node} ${styles.n2}`}></div>
+               <div className={`${styles.path} ${styles.p2}`}></div>
+               <div className={`${styles.node} ${styles.n3}`}></div>
+             </div>
+             <div className={styles.typing}>A-U-T-O</div>
+          </div>
+        );
+      case 1:
+        return (
+          <div className={styles.animContainer}>
+             <div className={styles.compressWrapper}>
+               <div className={styles.letterBlock}>A</div>
+               <div className={styles.letterBlock}>A</div>
+               <div className={styles.letterBlock}>A</div>
+             </div>
+             <div className={styles.resultBlock}>3A</div>
+          </div>
+        );
+      case 2:
+        return (
+          <div className={styles.animContainer}>
+             <div className={styles.chartWrapper}>
+               <div className={styles.chartBar}></div>
+               <div className={styles.chartBar}></div>
+               <div className={styles.chartBar}></div>
+               <div className={styles.chartBar}></div>
+             </div>
+          </div>
+        );
+      default:
+        return (
+          <div className={styles.placeholderBg}>
+            <span>{projects[idx].tech[0]}</span>
+          </div>
+        );
+    }
+  };
+
   return (
     <section id="projects" className={styles.projectsSection}>
       <div className="container">
@@ -40,9 +86,7 @@ export default function ProjectsSection() {
             <div key={idx} className={styles.projectCard}>
               <div className={styles.projectImage}>
                 {/* Placeholder Image using CSS pattern or text */}
-                <div className={styles.placeholderBg}>
-                  <span>{project.tech[0]}</span>
-                </div>
+                {renderProjectAnimation(idx)}
               </div>
               
               <div className={styles.projectTitleBand}>
