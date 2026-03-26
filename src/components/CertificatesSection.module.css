@@ -1,0 +1,107 @@
+.certificatesSection {
+  background-color: var(--bg-color);
+}
+
+.titleIcon {
+  color: var(--text-primary);
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .certGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.certCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.certCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+  opacity: 0.5;
+  transition: var(--transition);
+}
+
+.certCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.1);
+}
+
+.certCard:hover::before {
+  opacity: 1;
+}
+
+.certBody {
+  margin-bottom: 2rem;
+}
+
+.certTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.certIssuer {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.certDate {
+  display: inline-block;
+  background: rgba(138, 43, 226, 0.15);
+  color: var(--accent-cyan);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: var(--transition);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.viewBtn:hover {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+}
