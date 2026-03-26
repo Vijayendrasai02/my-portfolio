@@ -13,7 +13,7 @@ export default function ScrollReveal({ children, animationDelay = 0 }: ScrollRev
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Toggle visibility based on intersection (works beautifully for scrolling up and down)
+        // Toggle visibility based on aggressive intersection margins
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
@@ -21,8 +21,9 @@ export default function ScrollReveal({ children, animationDelay = 0 }: ScrollRev
         }
       });
     }, { 
-      threshold: 0.1, 
-      rootMargin: "0px 0px -10% 0px" // Trigger slightly before it hits the true bottom
+      threshold: 0, 
+      // Negative top margin means it vanishes before it fully leaves the top of the screen
+      rootMargin: "-30% 0px -20% 0px" 
     });
     
     const currentRef = domRef.current;
