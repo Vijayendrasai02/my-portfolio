@@ -116,6 +116,7 @@
 }
 
 .portraitPlaceholder {
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;

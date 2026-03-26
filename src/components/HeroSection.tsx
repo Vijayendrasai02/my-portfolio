@@ -1,6 +1,7 @@
 "use client";
 import styles from './HeroSection.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -34,9 +35,15 @@ export default function HeroSection() {
 
         <div className={`${styles.heroImageContainer} animate-fade-in`}>
           <div className={styles.imageWrapper}>
-            {/* Placeholder for portrait image */}
             <div className={styles.portraitPlaceholder}>
-               <span className={styles.portraitText}>V</span>
+               <Image 
+                 src="/profile.jpg" 
+                 alt="Vijayendra Sai" 
+                 fill
+                 sizes="(max-width: 900px) 300px, 400px"
+                 style={{ objectFit: 'cover' }}
+                 priority
+               />
             </div>
           </div>
         </div>
